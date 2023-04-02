@@ -1,0 +1,30 @@
+﻿@model PracticaMVC.Models.carreras
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>carreras</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre_carrera)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre_carrera)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.facultad_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.facultad_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.carrera_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
