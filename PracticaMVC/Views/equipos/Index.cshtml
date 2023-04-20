@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+        @{IEnumerable<string>strList = new List<string> {"a","b","c","d"};}
+        @{IEnumerable<int>intList = new List<int> {2005,2006,2007,2015};}
+
+<div class="row">
+    
+    <div class="form-group">
+        @Html.Label("lblNombre", "Nombre del equipo: ")
+        @Html.TextBox("txtNombre", "", new{@class="form-control"})
+    </div>
+
+     <div class="form-group">
+        @Html.Label("lblDescription", "Descripción: ")
+        @Html.TextArea("txtDescription", "", new{@class="form-control"})
+     </div>
+
+    <div class="form-group p-2">
+        @Html.Label("lblModelo", "Modelo")
+        @Html.TextBox("txtModelo", "", new{@class="form-control"})
+    </div>
+
+    
+    <div class="form-group p-3">
+        @Html.Label("lblAnioCompra", "Año de compra: ")
+        @Html.ListBox("txtCosto", new SelectList(intList))
+    </div>
+    
+
+    <div class="form-group p-2">
+        @Html.Label("lblCosto", "Costo")
+        @Html.TextBox("txtCosto", "", new{@class="form-control"})
+    </div>
+
+    <div class="form-group p-2">
+        @Html.Label("lblVidaUtil", "Vida útil")
+        @Html.TextBox("txtVidaUtil", "", new{@class="form-control"})
+    </div>
+
+    <div class="form-group p-2">
+        @Html.Label("lblTipoEquipo", "Tipo de Equipo")
+        @Html.DropDownList("ddlTipoEquipo", new SelectList(strList), "*Selecciona una opción*" )
+    </div>
+
+    <div class="form-group p-2">
+        @Html.CheckBox("Estado")Inactivo
+    </div>
+
+    <div class="form-group p-4 text-center">
+        <input type="submit" class="btn btn-success" value="Guardar" />
+        @Html.ActionLink("Guardar","Guardar", "Home")
+    </div>
+
+</div>
