@@ -1,4 +1,4 @@
-﻿@model PracticaMVC.Models.estados_equipo
+﻿@model PracticaMVC.Models.marcas
 
 @{
     ViewData["Title"] = "Create";
@@ -6,21 +6,21 @@
 
 <h1>Create</h1>
 
-<h4>estados_equipo</h4>
+<h4>marcas</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="descripcion" class="control-label"></label>
-                <input asp-for="descripcion" class="form-control" />
-                <span asp-validation-for="descripcion" class="text-danger"></span>
+                <label asp-for="nombre_marca" class="control-label"></label>
+                <input asp-for="nombre_marca" class="form-control" />
+                <span asp-validation-for="nombre_marca" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="estado" class="control-label"></label>
-                <input asp-for="estado" class="form-control" />
-                <span asp-validation-for="estado" class="text-danger"></span>
+                <label asp-for="estados" class="control-label"></label>
+                <input asp-for="estados" class="form-control" />
+                <span asp-validation-for="estados" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -1,0 +1,91 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Mantenimiento de Equipos</h1>
+<br /> 
+<form asp-action="CrearEquipos">
+    
+    <div class="form-group row mb-4">
+        @Html.Label("lblNombre", "Nombre del equipo: ")
+        @Html.TextBox("nombre", "", new{@class="form-control"})
+    </div>
+
+    <div class="form-group row mb-4">
+        @Html.Label("lblDescription", "Descripción: ")
+        @Html.TextArea("descripcion", "", new{@class="form-control"})
+    </div>
+
+    <div class="form-group row mb-4">
+        @Html.Label("lblModelo", "Modelo")
+        @Html.TextBox("modelo", "", new{@class="form-control"})
+    </div>
+
+    <div class="form-group row mb-4">
+        @Html.Label("lblCosto", "Costo")
+        @Html.TextBox("costo", "", new{@class="form-control"})
+    </div>
+
+    <div class="form-group row mb-4">
+        @Html.Label("lblVidaUtil", "Vida útil")
+        @Html.TextBox("vida_util", "", new{@class="form-control"})
+    </div>
+
+    <div class="form-group row mb-4">
+
+        <div class="col-sm-4">
+                @Html.DropDownList("id_marcas", ViewData["listadoDeMarcas"] as SelectList, "Seleccione una marca", new {@class="form-control"})
+        </div>
+
+        <div class="col-sm-4">
+                @Html.DropDownList("estado_equipo ", ViewData["listadeEstados"] as SelectList, "Seleccione el estado", new {@class="form-control"})
+        </div>
+
+        <div class="col-sm-4">
+                @Html.DropDownList("tipo_equipo", ViewData["listadeTipos"] as SelectList, "Seleccione el tipo", new {@class="form-control"})
+        </div>
+
+    </div>
+
+    <div class="form-group row mb-4">
+        @Html.CheckBox("estado")Inactivo
+    </div>
+
+    <div class="form-group row mb-4">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+            <input type="submit" class="btn btn-primary" value="Guardar" />
+        </div>
+    </div>
+
+    <table class="table table-striped"> 
+        <thead> 
+            <tr>
+                <th>Equipo</th>
+                <th>Descripcion</th>
+                <th>Marca</th>
+                <th>Estado</th>
+                <th>Tipo</th> 
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var equipo in (IEnumerable<dynamic>)ViewData["listadoEquipo"])
+            {
+                <tr>
+                    <td>@equipo.nombre</td>
+                    <td>@equipo.descripcion</td>
+                    <td>@equipo.marca_nombre</td>
+                    <td>@equipo.estado</td>
+                    <td>@equipo.descripcion</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</form>
+    
+
+
